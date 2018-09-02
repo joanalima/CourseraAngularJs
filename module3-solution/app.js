@@ -27,7 +27,7 @@
     var menuCtrl = this;
 
     menuCtrl.searchTerm = '';
-    menuCtrl.foundItems = '';
+    menuCtrl.found = '';
 
     menuCtrl.searchMenu = function() {
 
@@ -36,22 +36,20 @@
 
       if(menuCtrl.searchTerm == '') {
         menuCtrl.message = 'Nothing found';
-        menuCtrl.foundItems = '';
-      }
-
-      if( menuCtrl.searchTerm != '' ){
+        menuCtrl.found = '';
+      } else {
         promise.then( function(foundItems) {
           if( foundItems.length == 0 ){
             menuCtrl.message = 'Nothing found';
           } else {
-            menuCtrl.foundItems = foundItems;
+            menuCtrl.found = foundItems;
           }
         });
       }
     };
 
     menuCtrl.removeFromSearch = function(index) {
-      menuCtrl.foundItems.splice(index, 1);
+      menuCtrl.found.splice(index, 1);
     }
   }
 
