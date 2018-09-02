@@ -34,10 +34,7 @@
       var promise = MenuSearchService.getMatchedMenuItems(menuCtrl.searchTerm.toLowerCase());
       menuCtrl.message = '';
 
-      if(menuCtrl.searchTerm == '') {
-        menuCtrl.message = 'Nothing found';
-        menuCtrl.found = '';
-      } else {
+      if( menuCtrl.searchTerm != '' ){
         promise.then( function(foundItems) {
           if( foundItems.length == 0 ){
             menuCtrl.message = 'Nothing found';
@@ -46,6 +43,12 @@
           }
         });
       }
+
+      if(menuCtrl.searchTerm == '') {
+        menuCtrl.message = 'Nothing found';
+        menuCtrl.found = '';
+      }
+      
     };
 
     menuCtrl.removeFromSearch = function(index) {
