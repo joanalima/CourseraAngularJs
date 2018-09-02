@@ -42,13 +42,11 @@
             menuCtrl.found = foundItems;
           }
         });
-      }
-
-      if(menuCtrl.searchTerm == '') {
+      } else {
         menuCtrl.message = 'Nothing found';
         menuCtrl.found = '';
       }
-      
+
     };
 
     menuCtrl.removeFromSearch = function(index) {
