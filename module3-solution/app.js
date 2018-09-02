@@ -26,25 +26,26 @@
   function NarrowItDownController(MenuSearchService) {
     var menuCtrl = this;
 
-    menuCtrl.searchTerm = '';
-    menuCtrl.found = '';
+    menuCtrl.searchTerm = "";
+    menuCtrl.found = "";
 
     menuCtrl.searchMenu = function() {
 
       var promise = MenuSearchService.getMatchedMenuItems(menuCtrl.searchTerm.toLowerCase());
-      menuCtrl.message = '';
+      menuCtrl.message = "";
 
-      if( menuCtrl.searchTerm != '' ){
+      if( menuCtrl.searchTerm != ""){
         promise.then( function(foundItems) {
           if( foundItems.length == 0 ){
-            menuCtrl.message = 'Nothing found';
+            menuCtrl.message = "Nothing found";
+            menuCtrl.found = "";
           } else {
             menuCtrl.found = foundItems;
           }
-        });
+        })
       } else {
-        menuCtrl.message = 'Nothing found';
-        menuCtrl.found = '';
+        menuCtrl.message = "Nothing found";
+        menuCtrl.found = "";
       }
 
     };
