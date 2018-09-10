@@ -1,0 +1,12 @@
+body{
+  text-align: center;
+}
+
+button{
+  margin-top: 20px;
+}
+
+.well{
+  text-align: justify;
+  cursor: pointer;
+}

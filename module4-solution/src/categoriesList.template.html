@@ -1,0 +1,4 @@
+<div class="well" ng-repeat="item in $ctrl.items"
+    ui-sref="items({ categoryByShortName: item.short_name})">
+  <h5><span class="badge">{{item.short_name}}</span> {{ item.name }}</h5>
+</div>

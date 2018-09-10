@@ -1,0 +1,8 @@
+
+<div class="well" ng-repeat="item in $ctrl.items">
+  <h5><span class="badge">{{item.short_name}}</span> {{item.name}}</h5>
+  <p>{{item.description}}</p>
+  <span ng-if="item.price_small">${{item.price_small}} / {{item.small_portion_name}}</span> <br>
+  <span ng-if="item.price_large">${{item.price_large}} / {{item.large_portion_name}}</span>
+
+</div>

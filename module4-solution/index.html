@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="MenuApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Food2Good</title>
+  </head>
+  <body>
+
+    <ui-view></ui-view>
+
+    <!-- Libraries -->
+    <script type="text/javascript" src="libs/angular.min.js"></script>
+    <script type="text/javascript" src="libs/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script type="text/javascript" src="src/menuapp.module.js"></script>
+    <script type="text/javascript" src="src/data.module.js"></script>
+
+    <!-- Services -->
+    <script type="text/javascript" src="src/menudata.service.js"></script>
+
+
+    <!-- Routes -->
+    <script type="text/javascript" src="src/routes.js"></script>
+
+    <!-- Modules Artifacts -->
+
+    <!-- Categories -->
+    <script type="text/javascript" src="src/categories.component.js"></script>
+    <script type="text/javascript" src="src/categories.controller.js"></script>
+
+    <!-- Items -->
+    <script type="text/javascript" src="src/items.component.js"></script>
+    <script type="text/javascript" src="src/items.controller.js"></script>
+
+  </body>
+</html>
