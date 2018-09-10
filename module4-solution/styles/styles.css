@@ -8,5 +8,8 @@ button{
 
 .well{
   text-align: justify;
+
+}
+.pointer{
   cursor: pointer;
 }
