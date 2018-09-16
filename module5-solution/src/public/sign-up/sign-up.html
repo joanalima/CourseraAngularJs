@@ -1,0 +1,59 @@
+<!--
+The sign up form should ask for the following information:
+  - first name,
+  - last name,
+  - email address,
+  - and phone number.
+
+It should also ask the user to specify the menu number that's
+their favorite dish.
+-->
+
+<div class="container">
+  <h2>SIGN UP</h2>
+  <form name="signUpForm" novalidate>
+    <div class="form-group">
+      <label for="first_name">First Name *</label>
+      <input type="text" class="form-control" name="first_name" ng-model="signUpCtrl.first_name" required>
+      <span ng-if="signUpForm.first_name.$error.required && signUpForm.first_name.$touched"
+      style="color: white; font-size: 12px;">
+        * First Name is required
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name *</label>
+      <input type="text" class="form-control" name="last_name" ng-model="signUpCtrl.last_name" required>
+      <span ng-if="signUpForm.last_name.$error.required && signUpForm.last_name.$touched"
+      style="color: white; font-size: 12px;">
+        * Last Name is required
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" class="form-control" name="email" ng-model="signUpCtrl.email" required>
+      <span ng-if="signUpForm.email.$error.required && signUpForm.email.$touched"
+      style="color: white; font-size: 12px;">
+        * Email is required
+      </span>
+      <span ng-if="(!signUpForm.email.$error.required && signUpForm.email.$invalid) && signUpForm.email.$touched"
+      style="color: white; font-size: 12px;">
+        * Email is not valid
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="phone_number">Phone Number</label>
+      <input type="number" class="form-control" name="phone_number" ng-model="signUpCtrl.phone_number">
+    </div>
+    <div class="form-group">
+      <label for="favorite_dish">Favorite Dish *</label>
+      <input type="text" class="form-control" name="favorite_dish" ng-model="signUpCtrl.favorite_dish" maxlength="4" required>
+      <span ng-if="(signUpForm.favorite_dish.$error.maxlength || signUpForm.favorite_dish.$error.required) && signUpForm.favorite_dish.$touched"
+            style="color: white; font-size: 12px">Invalid short name; Max 4 characters</span>
+      <span ng-if="(signUpCtrl.successSignUp == true && signUpCtrl.foundFavDish == false)"
+            style="color:white; font-size: 12px">No such menu number exists!</span>
+    </div>
+
+    <button type="submit" class="btn btn-success" ng-click="signUpCtrl.signUp($event)" ng-disabled="signUpForm.$invalid">Submit</button>
+    <p ng-if="signUpCtrl.successSignUp">Your information has been saved.</p>
+    </form>
+</div>
